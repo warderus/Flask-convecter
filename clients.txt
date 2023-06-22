@@ -1,0 +1,31 @@
+!
+interface Bundle-Ether100.647 l2transport
+ encapsulation dot1q 647
+ rewrite ingress tag pop 1 symmetric
+!
+
+!
+interface Bundle-Ether200.647 l2transport
+ encapsulation dot1q 647
+ rewrite ingress tag pop 1 symmetric
+!
+
+!
+interface BVI647
+description description Link to Trushkov (FanPlus)
+ ipv4 address 185.49.64.45 255.255.255.252
+ shutdown
+!
+
+!
+l2vpn
+ bridge group 2
+  bridge-domain BD_647
+   interface Bundle-Ether100.647
+   !
+   interface Bundle-Ether200.647
+   !
+   routed interface BVI647
+   !
+  !
+!

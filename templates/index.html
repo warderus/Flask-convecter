@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Конвертации конфигурации</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row  g-gl-5 py-5">
+        <div class="col-lg-5 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 mb-3">Конвертации конфигурации ios в ios-xr</h1>
+            <p class="col-lg-10 fs-4">
+                !<br>
+                interface Vlan647<br>
+                 description description Link to Trushkov (FanPlus)<br>
+                 ip address 185.49.64.45 255.255.255.252<br>
+                !<br>
+                interface Vlan648<br>
+                 description link to diver_graphic_server<br>
+                 ip address 185.49.64.81 255.255.255.240 secondary<br>
+                 ip address 79.99.20.237 255.255.255.252<br>
+                 service-policy input PM-4Mbit<br>
+                 service-policy output PM-4Mbit<br>
+                 no ip redirects<br>
+                !<br>
+            </p>
+        </div>
+
+        <div class="col-md-10 mx-auto col-lg-7">
+            <form action="{{ url_for('response') }}" method="post" class="p-4 p-md-5 border rounded-3 bg-light">
+                <div class="form-group mb-3">
+                    <label for="message" class="display-6 fw-bold lh-4 mb-4">Конфигурация для 7609</label>
+                    <textarea name="message" id="message" class="form-control" rows="25"></textarea>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary">Конвертировать</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+!
+interface Bundle-Ether100.vlan l2transport
+ encapsulation dot1q vlan
+ rewrite ingress tag pop 1 symmetric
+!
+
+!
+interface Bundle-Ether200.vlan l2transport
+ encapsulation dot1q vlan
+ rewrite ingress tag pop 1 symmetric
+!
+
+!
+interface BVIvlan
+ review
+ ser-pol input
+ ser-pol output
+ second1
+ second2
+ ipaddr
+ ipred
+ shutdown
+!
+
+!
+l2vpn
+ bridge group 2
+  bridge-domain BD_vlan
+   interface Bundle-Ether100.vlan
+   !
+   interface Bundle-Ether200.vlan
+   !
+   routed interface BVIvlan
+   !
+  !
+!

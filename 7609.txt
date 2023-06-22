@@ -1,0 +1,5 @@
+!
+interface Vlan647
+description description Link to Trushkov (FanPlus)
+ip address 185.49.64.45 255.255.255.252
+!
